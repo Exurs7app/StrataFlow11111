@@ -2724,13 +2724,14 @@ nav a, nav button, .bottom-nav a, .bottom-nav button {
         <div id="sf-uid-notif" role="button" tabindex="0" title="المركز الشخصي"
              onclick="event.stopPropagation(); openPersonalCenter();"
              onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();openPersonalCenter();}"
-             style="display:flex;align-items:center;gap:8px;padding:4px 6px;border-radius:12px;background:transparent;border:0;box-shadow:none;cursor:pointer;transition:opacity .15s ease;user-select:none;opacity:.95;direction:ltr;"
+             style="display:flex;align-items:center;gap:8px;padding:4px 6px;border-radius:12px;background:transparent;border:0;box-shadow:none;cursor:pointer;transition:opacity .15s ease;user-select:none;opacity:.95;direction:rtl;"
              onmouseover="this.style.opacity='1'"
              onmouseout="this.style.opacity='0.95'">
-            <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#0f2450 0%,#0a1a3a 100%);box-shadow:0 4px 10px rgba(0,0,0,.35),inset 0 0 0 1px rgba(96,165,250,.35);flex:0 0 auto;overflow:hidden;">
-                <img src="data:image/jpeg;base64,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" alt="StrataFlow" style="width:38px;height:38px;border-radius:11px;object-fit:cover;display:block;">
+            <span aria-hidden="true" class="sf-settings-gear" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:11px;flex:0 0 auto;">
+                <i class="fa-solid fa-gear sf-settings-gear-icon" style="color:#ffffff;font-size:18px;"></i>
             </span>
-            <span id="sf-notif-uid" style="font-size:13px;font-weight:700;color:#ffffff;direction:ltr;font-family:'Tajawal',sans-serif;letter-spacing:0.3px;white-space:nowrap;">UID:--------</span>
+            <span style="font-size:15px;font-weight:700;color:#ffffff;font-family:'Tajawal',sans-serif;">الإعدادات</span>
+            <i class="fa-solid fa-chevron-left" style="color:#a9b4d0;font-size:12px;"></i>
         </div>
         <script>
         (function(){
@@ -2759,6 +2760,48 @@ nav a, nav button, .bottom-nav a, .bottom-nav button {
             } else { boot(); }
         })();
         </script>
+<style>
+/* ==== Settings gear: dynamic glowing pro button ==== */
+.sf-settings-gear{
+    position:relative; overflow:hidden;
+    background: linear-gradient(135deg,#7c3aed 0%,#4f46e5 35%,#22d3ee 65%,#7c3aed 100%);
+    background-size: 300% 300%;
+    animation: sfGearShift 6s ease-in-out infinite, sfGearGlow 2.6s ease-in-out infinite;
+    transition: transform .2s ease;
+    will-change: transform, box-shadow, background-position;
+}
+.sf-settings-gear:hover{ transform: translateY(-1px) scale(1.05); }
+.sf-settings-gear-icon{
+    animation: sfGearSpin 8s linear infinite;
+    display:inline-block;
+    filter: drop-shadow(0 0 4px rgba(255,255,255,.35));
+    will-change: transform;
+}
+.sf-settings-gear:hover .sf-settings-gear-icon{ animation-duration: 1.8s; }
+.sf-settings-gear::before{
+    content:""; position:absolute; inset:-40%;
+    background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,.38) 50%, transparent 60%);
+    transform: translateX(-100%);
+    animation: sfGearShine 4.5s ease-in-out infinite;
+    pointer-events:none;
+}
+@keyframes sfGearShift{
+    0%,100% { background-position: 0% 50%; }
+    50%     { background-position: 100% 50%; }
+}
+@keyframes sfGearGlow{
+    0%,100% { box-shadow: 0 4px 12px rgba(124,58,237,.45), 0 0 0 0 rgba(167,139,250,.55), inset 0 0 0 1px rgba(167,139,250,.5); }
+    50%     { box-shadow: 0 6px 22px rgba(124,58,237,.8), 0 0 22px 4px rgba(34,211,238,.4), inset 0 0 0 1px rgba(167,139,250,.8); }
+}
+@keyframes sfGearSpin{ to { transform: rotate(360deg); } }
+@keyframes sfGearShine{
+    0%,60%   { transform: translateX(-100%); }
+    80%,100% { transform: translateX(100%); }
+}
+@media (prefers-reduced-motion: reduce){
+    .sf-settings-gear, .sf-settings-gear-icon, .sf-settings-gear::before { animation: none !important; }
+}
+</style>
 </header>
 
 <style>
@@ -3414,31 +3457,100 @@ nav a, nav button, .bottom-nav a, .bottom-nav button {
         التزامن بالصفقة
     </button>
 
-    <!-- ============ SF Sync Experts (added) ============ -->
+    <!-- ============ SF Sync Experts (redesigned to match reference) ============ -->
     <div id="sf-sync-experts" class="mt-1 rounded-2xl p-3" style="background: rgba(15,25,55,0.55); border: 1px solid rgba(59,130,246,0.18);">
-        <h4 class="text-center text-white/90 text-sm font-bold mb-2">قائمة خبراء التداول المتاحين للمزامنة</h4>
+        <style>
+            #sf-sync-experts .sfx-title-wrap{display:flex;justify-content:center;margin-bottom:14px;}
+            #sf-sync-experts .sfx-title{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:999px;background:linear-gradient(180deg,rgba(20,32,66,0.9),rgba(12,20,45,0.9));border:1px solid rgba(230,207,133,0.35);box-shadow:0 4px 14px -6px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.05);color:#fff;font-weight:800;font-size:13px;white-space:nowrap;}
+            #sf-sync-experts .sfx-title .sfx-crown{color:#f5c15a;filter:drop-shadow(0 0 6px rgba(245,193,90,0.5));font-size:14px;}
+            #sf-sync-experts .sf-expert-card{position:relative;border-radius:18px;padding:14px 14px 12px;margin-bottom:14px;background:linear-gradient(160deg,#101a36 0%,#0b1430 100%);border:1px solid rgba(255,255,255,0.06);overflow:hidden;box-shadow:0 10px 24px -14px rgba(0,0,0,0.65),inset 0 1px 0 rgba(255,255,255,0.03);}
+            #sf-sync-experts .sf-expert-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;border-radius:18px 18px 0 0;}
+            #sf-sync-experts .sf-expert-card[data-color="orange"]::before{background:linear-gradient(90deg,#f59e0b,#fbbf24);}
+            #sf-sync-experts .sf-expert-card[data-color="purple"]::before{background:linear-gradient(90deg,#8b5cf6,#a855f7);}
+            #sf-sync-experts .sfx-row{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+            #sf-sync-experts .sfx-sync-btn{padding:10px 14px;border-radius:14px;font-weight:800;font-size:13px;color:#fff;border:none;cursor:pointer;background:linear-gradient(135deg,#7c3aed 0%,#6366f1 55%,#3b82f6 100%);box-shadow:0 8px 22px -8px rgba(99,102,241,0.75),inset 0 1px 0 rgba(255,255,255,0.15);transition:transform .15s ease;white-space:nowrap;}
+            #sf-sync-experts .sfx-sync-btn:active{transform:scale(.96);}
+            #sf-sync-experts .sfx-yield{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:14px;background:rgba(16,185,129,0.10);border:1px solid rgba(16,185,129,0.28);color:#34d399;font-weight:800;font-size:12px;line-height:1.15;flex-direction:column;text-align:center;}
+            #sf-sync-experts .sfx-yield .sfx-yield-top{display:inline-flex;align-items:center;gap:5px;color:#a7f3d0;font-weight:700;}
+            #sf-sync-experts .sfx-yield .sfx-yield-val{color:#34d399;font-weight:800;}
+            #sf-sync-experts .sfx-mid{display:flex;align-items:center;gap:10px;flex:1;justify-content:flex-end;}
+            #sf-sync-experts .sfx-name-wrap{display:flex;align-items:center;gap:6px;justify-content:flex-end;margin-bottom:6px;}
+            #sf-sync-experts .sfx-name{color:#fff;font-weight:800;font-size:14px;}
+            #sf-sync-experts .sfx-badge{font-size:10px;font-weight:800;padding:2px 7px;border-radius:6px;letter-spacing:.5px;}
+            #sf-sync-experts .sfx-badge.top{background:linear-gradient(135deg,#f59e0b,#d97706);color:#1a1305;}
+            #sf-sync-experts .sfx-badge.pro{background:linear-gradient(135deg,#8b5cf6,#6d28d9);color:#fff;}
+            #sf-sync-experts .sfx-avatar-wrap{position:relative;width:52px;height:52px;flex-shrink:0;}
+            #sf-sync-experts .sfx-avatar{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:14px;box-shadow:0 6px 16px -6px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.2);}
+            #sf-sync-experts .sfx-avatar.orange{background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 60%,#d97706 100%);}
+            #sf-sync-experts .sfx-avatar.purple{background:linear-gradient(135deg,#a78bfa 0%,#8b5cf6 60%,#6d28d9 100%);}
+            #sf-sync-experts .sfx-online{position:absolute;bottom:-2px;left:-2px;width:14px;height:14px;border-radius:50%;background:#10b981;border:2px solid #0b1430;box-shadow:0 0 8px rgba(16,185,129,0.7);}
+            #sf-sync-experts .sfx-progress{margin-top:12px;display:flex;align-items:center;gap:8px;}
+            #sf-sync-experts .sfx-progress-pct{color:#fff;font-weight:800;font-size:12px;min-width:36px;}
+            #sf-sync-experts .sfx-progress-track{flex:1;height:6px;border-radius:999px;background:rgba(255,255,255,0.08);overflow:hidden;position:relative;}
+            #sf-sync-experts .sfx-progress-fill{height:100%;border-radius:999px;transition:width .6s ease;}
+            #sf-sync-experts .sf-expert-card[data-color="orange"] .sfx-progress-fill{background:linear-gradient(90deg,#f59e0b 0%,#fbbf24 40%,#34d399 100%);box-shadow:0 0 8px rgba(251,191,36,0.4);}
+            #sf-sync-experts .sf-expert-card[data-color="purple"] .sfx-progress-fill{background:linear-gradient(90deg,#8b5cf6 0%,#a855f7 40%,#34d399 100%);box-shadow:0 0 8px rgba(168,85,247,0.4);}
+        </style>
+
+        <div class="sfx-title-wrap">
+            <span class="sfx-title"><i class="fa-solid fa-crown sfx-crown"></i><span>قائمة خبراء التداول المتاحين للمزامنة</span></span>
+        </div>
 
         <!-- Alpha Trader Pro -->
         <div class="sf-expert-card" data-expert="alpha" data-name="Alpha Trader Pro" data-yield="145.2" data-winrate="0.72" data-color="orange">
-            <div class="flex items-center justify-between gap-3 p-3 rounded-xl mb-2" style="background:#0f1a35; border:1px solid rgba(255,255,255,0.06);">
-                <button type="button" class="sf-sync-btn px-4 py-2.5 rounded-lg text-white text-[13px] font-bold transition active:scale-95" style="background:#2f7bff;">مزامنة الآن</button>
-                <div class="flex-1 text-right">
-                    <div class="text-white font-bold text-[14px]">Alpha Trader Pro</div>
-                    <div class="text-emerald-400 text-[12px] font-semibold sf-expert-sub">معدل العائد: +145.2%</div>
+            <div class="sfx-row">
+                <button type="button" class="sf-sync-btn sfx-sync-btn">مزامنة الآن</button>
+                <div class="sfx-mid">
+                    <div style="flex:1;">
+                        <div class="sfx-name-wrap">
+                            <span class="sfx-badge top">TOP</span>
+                            <span class="sfx-name">Alpha Trader Pro</span>
+                        </div>
+                        <div style="display:flex;justify-content:flex-end;">
+                            <div class="sfx-yield">
+                                <span class="sfx-yield-top">معدل العائد: <i class="fa-solid fa-arrow-trend-up"></i></span>
+                                <span class="sfx-yield-val sf-expert-sub">+145.2%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sfx-avatar-wrap">
+                        <div class="sfx-avatar orange">CK</div>
+                        <span class="sfx-online"></span>
+                    </div>
                 </div>
-                <div class="w-11 h-11 rounded-xl flex items-center justify-center text-white font-extrabold text-[13px]" style="background:linear-gradient(135deg,#f59e0b,#d97706);">CK</div>
+            </div>
+            <div class="sfx-progress">
+                <span class="sfx-progress-pct">72%</span>
+                <div class="sfx-progress-track"><div class="sfx-progress-fill" style="width:72%;"></div></div>
             </div>
         </div>
 
         <!-- Whale Tracking Bot -->
         <div class="sf-expert-card" data-expert="whale" data-name="Whale Tracking Bot" data-yield="89.3" data-winrate="0.63" data-color="purple">
-            <div class="flex items-center justify-between gap-3 p-3 rounded-xl mb-2" style="background:#0f1a35; border:1px solid rgba(255,255,255,0.06);">
-                <button type="button" class="sf-sync-btn px-4 py-2.5 rounded-lg text-white text-[13px] font-bold transition active:scale-95" style="background:#2f7bff;">مزامنة الآن</button>
-                <div class="flex-1 text-right">
-                    <div class="text-white font-bold text-[14px]">Whale Tracking Bot</div>
-                    <div class="text-emerald-400 text-[12px] font-semibold sf-expert-sub">معدل العائد: +89.3%</div>
+            <div class="sfx-row">
+                <button type="button" class="sf-sync-btn sfx-sync-btn">مزامنة الآن</button>
+                <div class="sfx-mid">
+                    <div style="flex:1;">
+                        <div class="sfx-name-wrap">
+                            <span class="sfx-badge pro">PRO</span>
+                            <span class="sfx-name">Whale Tracking Bot</span>
+                        </div>
+                        <div style="display:flex;justify-content:flex-end;">
+                            <div class="sfx-yield">
+                                <span class="sfx-yield-top">معدل العائد: <i class="fa-solid fa-arrow-trend-up"></i></span>
+                                <span class="sfx-yield-val sf-expert-sub">+89.3%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sfx-avatar-wrap">
+                        <div class="sfx-avatar purple">WX</div>
+                        <span class="sfx-online"></span>
+                    </div>
                 </div>
-                <div class="w-11 h-11 rounded-xl flex items-center justify-center text-white font-extrabold text-[13px]" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9);">WX</div>
+            </div>
+            <div class="sfx-progress">
+                <span class="sfx-progress-pct">63%</span>
+                <div class="sfx-progress-track"><div class="sfx-progress-fill" style="width:63%;"></div></div>
             </div>
         </div>
     </div>
@@ -9400,8 +9512,22 @@ document.addEventListener('DOMContentLoaded',function(){ try{ updateLangBadges()
             const raw = localStorage.getItem(STORAGE_KEY);
             if(!raw) return [];
             const arr = JSON.parse(raw);
-            return Array.isArray(arr) ? arr : [];
+            if(!Array.isArray(arr)) return [];
+            // Filter out blocked notifications (sync success + first deposit task)
+            const filtered = arr.filter(function(n){ return !isBlockedNotif(n); });
+            if(filtered.length !== arr.length){
+                try { localStorage.setItem(STORAGE_KEY, JSON.stringify(filtered)); } catch(e){}
+            }
+            return filtered;
         } catch(e){ return []; }
+    }
+    // Notifications that must never appear in the bell
+    function isBlockedNotif(n){
+        if(!n) return false;
+        const t = ((n.title||'') + ' ' + (n.desc||'')).toString();
+        if(/تمت\s*المزامنة|المزامنة\s*بنجاح|Sync(hronization)?\s*(successful|completed|done)/i.test(t)) return true;
+        if(/أول\s*(عملية\s*)?[إا]يداع\s*للمنصة|عمل\s*أول\s*(عملية\s*)?[إا]يداع|Make\s*first\s*platform\s*deposit|first\s*platform\s*deposit/i.test(t)) return true;
+        return false;
     }
     function persist(){
         try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data.slice(0, MAX_NOTIFS))); } catch(e){}
@@ -9426,6 +9552,7 @@ document.addEventListener('DOMContentLoaded',function(){ try{ updateLangBadges()
 
     window.bfAddNotif = function(notif){
         if(!notif || typeof notif !== 'object') return;
+        if(isBlockedNotif(notif)) return; // block unwanted notifications
         const n = {
             id: Date.now() + Math.floor(Math.random()*1000),
             type: notif.type || 'system',
@@ -11125,7 +11252,7 @@ function bfToggleTheme(){
       </div>
       <div style="display:flex;align-items:center;flex-wrap:wrap;">
         <span class="pc-uid" id="pc-uid">UID:627844</span>
-        <span class="pc-vip-chip"><i class="fa-solid fa-user-shield"></i> VIP0</span>
+        <span class="pc-vip-chip" id="pc-vip-chip"><i class="fa-solid fa-user-shield"></i> VIP0</span>
       </div>
     </div>
 
@@ -11748,7 +11875,9 @@ function bfToggleTheme(){
   function apply(tabId){
     var el=document.getElementById('sf-uid-notif');
     if(!el) return;
-    if(tabId==='home'){ el.classList.remove('sf-hidden'); }
+    // 'market' opens a modal without leaving home — keep the settings button visible
+    if(tabId === 'market'){ tabId = currentTab(); }
+    if(tabId==='home' || !tabId){ el.classList.remove('sf-hidden'); }
     else { el.classList.add('sf-hidden'); }
   }
   function currentTab(){
@@ -12285,6 +12414,27 @@ function bfToggleTheme(){
     });
   }
 
+  // === [ADDED] Expose SFSync public API so subscription flow can mount the real countdown reliably ===
+  try {
+    window.SFSync = Object.assign(window.SFSync || {}, {
+      renderCard: renderCard,
+      renderAll: renderAll,
+      mountCountdown: mountCountdown,
+      unmountCountdown: unmountCountdown,
+      activateExpert: function(id, startedAt){
+        try {
+          var s = subs();
+          if(!s[id]) s[id] = { startedAt: startedAt || Date.now() };
+          setSubs(s);
+          var st = stats(); if(!st[id]) st[id] = {trades:0, pnl:0, last:null}; setStats(st);
+          renderCard(id);
+          ensureTimer();
+          return true;
+        } catch(e){ return false; }
+      }
+    });
+  } catch(e){}
+
   function init(){
     if(!document.querySelector('.sf-expert-card')) return;
     bind();
@@ -12687,6 +12837,26 @@ function bfToggleTheme(){
             detail: { expertId: __expertId, startedAt: Date.now() }
           }));
         }
+      }
+    } catch(e){}
+    // === [ADDED] Ensure the 24h countdown UI is visible right after activation ===
+    try {
+      var __expId2 = currentExpertCard && (currentExpertCard.dataset.expert || currentExpertCard.getAttribute('data-expert'));
+      if(__expId2){
+        if(window.SFSync && typeof window.SFSync.renderCard === 'function'){
+          window.SFSync.renderCard(__expId2);
+        }
+        document.dispatchEvent(new CustomEvent('sf-subscription-activated', {
+          detail: { expertId: __expId2, startedAt: Date.now() }
+        }));
+        setTimeout(function(){
+          var __card = document.querySelector('.sf-expert-card[data-expert="'+__expId2+'"]');
+          if(__card && !__card.querySelector('.sf-countdown')){
+            if(window.SFSync && typeof window.SFSync.mountCountdown === 'function'){
+              try { window.SFSync.mountCountdown(__card, __expId2, Date.now()); } catch(e){}
+            }
+          }
+        }, 350);
       }
     } catch(e){}
     window.closeExpertSubscribe();
@@ -13177,6 +13347,106 @@ function bfToggleTheme(){
   else boot();
   window.addEventListener('load', boot);
   window.addEventListener('pageshow', boot);
+})();
+</script>
+
+<!-- ==================== [ADDED] Countdown visual polish (non-destructive) ==================== -->
+<style>
+:where(.sf-countdown){margin-top:12px;padding:14px 14px 12px;border-radius:16px;background:linear-gradient(160deg, rgba(15,32,72,.85), rgba(10,26,58,.85));border:1px solid rgba(99,102,241,.28);box-shadow:0 8px 24px -12px rgba(59,130,246,.35), inset 0 1px 0 rgba(255,255,255,.04);color:#fff;position:relative;overflow:hidden;}
+:where(.sf-countdown-head){display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-size:12px;}
+:where(.sf-countdown-label){display:inline-flex;align-items:center;gap:6px;color:#bcd0ff;font-weight:600;}
+:where(.sf-countdown-label i){color:#7aa7ff;}
+:where(.sf-cd-live){display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(16,185,129,.15);color:#34d399;font-weight:700;font-size:11px;border:1px solid rgba(16,185,129,.35);}
+:where(.sf-cd-dot){width:7px;height:7px;border-radius:50%;background:#10b981;animation:sfCdPulse 1.6s ease-out infinite;}
+@keyframes sfCdPulse {0%{box-shadow:0 0 0 0 rgba(16,185,129,.65);}70%{box-shadow:0 0 0 8px rgba(16,185,129,0);}100%{box-shadow:0 0 0 0 rgba(16,185,129,0);}}
+:where(.sf-countdown-digits){display:flex;align-items:center;justify-content:center;gap:6px;direction:ltr;}
+:where(.sf-cd-num){min-width:64px;padding:10px 6px;text-align:center;font-family:'Tajawal','SF Mono',ui-monospace,monospace;font-weight:800;font-size:26px;letter-spacing:1px;background:linear-gradient(180deg, rgba(30,58,138,.55), rgba(15,32,72,.55));border:1px solid rgba(99,102,241,.35);border-radius:12px;color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.06), 0 4px 10px -6px rgba(0,0,0,.4);}
+:where(.sf-cd-sep){font-size:22px;font-weight:800;color:#7aa7ff;opacity:.85;}
+:where(.sf-countdown-units){display:flex;align-items:center;justify-content:center;gap:6px;margin-top:6px;direction:ltr;color:#9db4e8;font-size:11px;}
+:where(.sf-countdown-units > span){min-width:64px;text-align:center;}
+:where(.sf-cd-sp){min-width:12px;}
+:where(.sf-countdown-meta){display:flex;align-items:center;justify-content:space-between;margin-top:10px;font-size:11px;color:#c9d6f5;}
+:where(.sf-cd-endtime){display:inline-flex;align-items:center;gap:6px;color:#9db4e8;}
+:where(.sf-countdown-bar){margin-top:8px;height:6px;border-radius:999px;background:rgba(255,255,255,.06);overflow:hidden;}
+:where(.sf-countdown-bar-fill){height:100%;background:linear-gradient(90deg, #3b82f6 0%, #8b5cf6 60%, #ec4899 100%);transition:width .6s ease;box-shadow:0 0 12px rgba(139,92,246,.45);}
+:where(.sf-countdown.sf-cd-warn .sf-countdown-bar-fill){background:linear-gradient(90deg,#f59e0b,#ef4444);}
+:where(.sf-countdown.sf-cd-danger){border-color:rgba(239,68,68,.5);}
+:where(.sf-countdown.sf-cd-danger .sf-countdown-bar-fill){background:linear-gradient(90deg,#ef4444,#b91c1c);animation:sfCdDangerPulse 1.2s ease-in-out infinite;}
+@keyframes sfCdDangerPulse {0%,100%{filter:brightness(1);}50%{filter:brightness(1.35);}}
+:where(.sf-cd-flip){animation:sfCdFlip .35s ease;}
+@keyframes sfCdFlip {0%{transform:translateY(-6px);opacity:.4;}100%{transform:translateY(0);opacity:1;}}
+</style>
+<!-- ==================== [/ADDED] ==================== -->
+<script>
+/* ==== Return to Personal Center on close of KYC / Change Password / About / Team Reward ==== */
+(function(){
+  function reopenPC(){
+    try {
+      if (typeof window.openPersonalCenter === 'function') {
+        setTimeout(function(){ try { window.openPersonalCenter(); } catch(e){} }, 0);
+      }
+    } catch(e){}
+  }
+  function wrap(name){
+    var orig = window[name];
+    if (typeof orig !== 'function') return;
+    if (orig.__sfWrappedPC) return;
+    var wrapped = function(){
+      var r;
+      try { r = orig.apply(this, arguments); } finally { reopenPC(); }
+      return r;
+    };
+    wrapped.__sfWrappedPC = true;
+    window[name] = wrapped;
+  }
+  function wrapAll(){
+    wrap('closeKycModal');
+    wrap('closeChangePasswordModal');
+    wrap('closeLicenseModal');
+    wrap('closeTeamModal');
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function(){ wrapAll(); setTimeout(wrapAll, 300); });
+  } else {
+    wrapAll();
+    setTimeout(wrapAll, 300);
+  }
+})();
+</script>
+
+<script>
+(function(){
+  try {
+    function computeVipTier(n){
+      n = parseInt(n, 10) || 0;
+      if (n >= 50) return 'VIP7';
+      if (n >= 39) return 'VIP6';
+      if (n >= 30) return 'VIP5';
+      if (n >= 21) return 'VIP4';
+      if (n >= 15) return 'VIP3';
+      if (n >= 8)  return 'VIP2';
+      if (n >= 3)  return 'VIP1';
+      return 'VIP0';
+    }
+    function updateVipChip(){
+      var countEl = document.getElementById('pc-followers-count');
+      var chipEl  = document.getElementById('pc-vip-chip');
+      if (!countEl || !chipEl) return;
+      var tier = computeVipTier(countEl.textContent);
+      chipEl.innerHTML = '<i class="fa-solid fa-user-shield"></i> ' + tier;
+    }
+    function boot(){
+      var countEl = document.getElementById('pc-followers-count');
+      if (!countEl) return;
+      updateVipChip();
+      new MutationObserver(updateVipChip).observe(countEl, {
+        childList: true, characterData: true, subtree: true
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', boot);
+    } else { boot(); }
+  } catch(e) {}
 })();
 </script>
 </body>
