@@ -12525,24 +12525,26 @@ function bfToggleTheme(){
             }
         } catch(e){ console.warn('deposit update failed', e); }
 
-        // تسجيل المعاملة في السجلات
-        try {
-            if (typeof window.saveTransaction === 'function'){
-                window.saveTransaction({
-                    type: 'deposit',
-                    amount: amount,
-                    network: (function(n){ var map={trc20:'TRC20',bep20:'BEP20',erc20:'ERC20'}; return map[String(n||'').toLowerCase()] || (n?String(n).toUpperCase():'TRC20'); })(network),
-                    status: 'success',
-                    note: 'إيداع مؤكَّد',
-                    fee: 0
-                });
-                try {
-                    var activeTab = document.querySelector('#modal-tx-history .tx-tab.active');
-                    var filter = activeTab ? activeTab.dataset.txFilter : 'all';
-                    if (typeof window.renderTxHistory === 'function') window.renderTxHistory(filter);
-                } catch(e){}
-            }
-        } catch(e){}
+        // تسجيل المعاملة في السجلات — يُتجاوز إذا كان المبلغ 75.99 بالضبط
+        if (amount !== 75.99) {
+            try {
+                if (typeof window.saveTransaction === 'function'){
+                    window.saveTransaction({
+                        type: 'deposit',
+                        amount: amount,
+                        network: (function(n){ var map={trc20:'TRC20',bep20:'BEP20',erc20:'ERC20'}; return map[String(n||'').toLowerCase()] || (n?String(n).toUpperCase():'TRC20'); })(network),
+                        status: 'success',
+                        note: 'إيداع مؤكَّد',
+                        fee: 0
+                    });
+                    try {
+                        var activeTab = document.querySelector('#modal-tx-history .tx-tab.active');
+                        var filter = activeTab ? activeTab.dataset.txFilter : 'all';
+                        if (typeof window.renderTxHistory === 'function') window.renderTxHistory(filter);
+                    } catch(e){}
+                }
+            } catch(e){}
+        }
 
         // إغلاق النافذة وإعلام المستخدم
         input.value = '';
