@@ -89,19 +89,137 @@ html:not([data-theme="light"]) body::after { background-color: transparent; }
             width:180px; height:180px; border-radius:9999px;
             background:radial-gradient(closest-side, rgba(99,102,241,.28), transparent 70%);
         }
+        /* ===== Enhanced Main Coins (sf-coin-card) — visual only ===== */
+        #sf-home-main-coins { padding-top: 6px; padding-bottom: 10px; }
         .sf-coin-card {
+            position: relative;
             flex-shrink: 0;
             width: 72%;
             scroll-snap-align: start;
-            background: linear-gradient(160deg, rgba(30,58,138,.55), rgba(15,23,42,.85));
-            border: 1px solid rgba(59,130,246,.18);
+            background:
+                radial-gradient(120% 90% at 100% 0%, rgba(212,184,114,.10), transparent 55%),
+                linear-gradient(160deg, rgba(30,58,138,.55) 0%, rgba(15,23,42,.9) 100%);
+            border: 1px solid rgba(212,184,114,.22);
             border-radius: 1.25rem;
-            padding: 1rem 1.1rem 1.15rem;
-            min-height: 128px;
+            padding: 1rem 1.1rem 1.1rem;
+            min-height: 148px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            overflow: hidden;
+            isolation: isolate;
+            box-shadow:
+                0 10px 30px -14px rgba(0,0,0,.55),
+                inset 0 1px 0 rgba(255,255,255,.06);
+            transform: translateZ(0);
+            transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease, border-color .35s ease;
+            opacity: 0;
+            animation: sfCoinRise .7s cubic-bezier(.2,.75,.2,1) forwards;
         }
+        #sf-home-main-coins .sf-coin-card:nth-child(1){ animation-delay:.05s; }
+        #sf-home-main-coins .sf-coin-card:nth-child(2){ animation-delay:.18s; }
+        #sf-home-main-coins .sf-coin-card:nth-child(3){ animation-delay:.31s; }
+        #sf-home-main-coins .sf-coin-card:nth-child(4){ animation-delay:.44s; }
+        .sf-coin-card::before{
+            content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+            background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.14) 48%, transparent 66%);
+            transform: translateX(-120%);
+            animation: sfCoinShine 5.5s ease-in-out infinite;
+            mix-blend-mode: screen; z-index: 1;
+        }
+        #sf-home-main-coins .sf-coin-card:nth-child(2)::before{ animation-delay: 1.2s; }
+        #sf-home-main-coins .sf-coin-card:nth-child(3)::before{ animation-delay: 2.4s; }
+        .sf-coin-card:active{ transform: translateY(-1px) scale(.99); }
+        .sf-coin-card:hover{
+            transform: translateY(-2px);
+            border-color: rgba(212,184,114,.42);
+            box-shadow: 0 18px 40px -18px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.08);
+        }
+        .sf-coin-head{ display:flex; align-items:center; justify-content:space-between; gap:8px; position:relative; z-index:2; }
+        .sf-coin-id{ display:flex; align-items:center; gap:9px; }
+        .sf-coin-ic{
+            position:relative; width:38px; height:38px; border-radius:50%;
+            display:flex; align-items:center; justify-content:center;
+            color:#fff; font-weight:800; font-size:15px;
+            box-shadow: 0 6px 18px -6px currentColor;
+            animation: sfCoinFloat 4.2s ease-in-out infinite;
+        }
+        .sf-coin-ic::after{
+            content:""; position:absolute; inset:-6px; border-radius:50%;
+            background: radial-gradient(closest-side, currentColor, transparent 70%);
+            opacity:.35; filter: blur(6px); z-index:-1;
+            animation: sfCoinPulse 2.6s ease-in-out infinite;
+        }
+        .sf-coin-ic.btc{ background:linear-gradient(135deg,#f7931a,#b96b00); color:#f7931a; }
+        .sf-coin-ic.eth{ background:linear-gradient(135deg,#8a92ff,#4b57d1); color:#8a92ff; }
+        .sf-coin-ic.sol{ background:linear-gradient(135deg,#c67bff,#7a3bd6); color:#c67bff; }
+        .sf-coin-ic.bnb{ background:linear-gradient(135deg,#f3ba2f,#a67a10); color:#f3ba2f; }
+        .sf-coin-ic > span{ position:relative; z-index:1; }
+        .sf-coin-name{ font-size:13px; font-weight:700; color:#fff; letter-spacing:.2px; }
+        .sf-coin-name .q{ color:rgba(255,255,255,.5); font-weight:600; }
+        .sf-coin-chg{
+            display:inline-flex; align-items:center; gap:4px;
+            font-size:10.5px; font-weight:800; padding:4px 8px; border-radius:999px;
+            background: rgba(34,197,94,.12); color:#4ade80;
+            border:1px solid rgba(34,197,94,.25);
+        }
+        .sf-coin-chg.dn{ background: rgba(239,68,68,.12); color:#fb7185; border-color: rgba(239,68,68,.25); }
+        .sf-coin-chg i{ font-size:9px; }
+        .sf-coin-body{ position:relative; z-index:2; display:flex; align-items:flex-end; justify-content:space-between; gap:10px; margin-top:8px; }
+        .sf-coin-price{
+            font-size: 20px; font-weight: 800; line-height:1.1;
+            background: linear-gradient(180deg,#ffffff 0%, #e8d8a8 120%);
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+            letter-spacing:.2px;
+            transition: filter .3s ease;
+        }
+        .sf-coin-sub{ font-size:10px; color: rgba(255,255,255,.5); margin-top:3px; font-weight:600; }
+        .sf-coin-spark{ width: 84px; height: 34px; flex-shrink:0; opacity:.95; }
+        .sf-coin-spark path.line{
+            fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
+            stroke-dasharray: 220; stroke-dashoffset: 220;
+            animation: sfCoinDraw 1.6s ease-out .35s forwards;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,.35));
+        }
+        .sf-coin-spark path.area{ opacity:.35; }
+        .sf-coin-card.up .sf-coin-spark path.line{ stroke: url(#sfGradUp); }
+        .sf-coin-card.up .sf-coin-spark path.area{ fill: url(#sfGradUpFill); }
+        .sf-coin-card.dn .sf-coin-spark path.line{ stroke: url(#sfGradDn); }
+        .sf-coin-card.dn .sf-coin-spark path.area{ fill: url(#sfGradDnFill); }
+
+        @keyframes sfCoinRise{
+            0%{ opacity:0; transform: translateY(14px) scale(.985); }
+            100%{ opacity:1; transform: translateY(0) scale(1); }
+        }
+        @keyframes sfCoinShine{
+            0%{ transform: translateX(-120%); }
+            55%{ transform: translateX(120%); }
+            100%{ transform: translateX(120%); }
+        }
+        @keyframes sfCoinFloat{
+            0%,100%{ transform: translateY(0); }
+            50%{ transform: translateY(-2px); }
+        }
+        @keyframes sfCoinPulse{
+            0%,100%{ opacity:.28; transform: scale(1); }
+            50%{ opacity:.55; transform: scale(1.08); }
+        }
+        @keyframes sfCoinDraw{
+            to{ stroke-dashoffset: 0; }
+        }
+        @keyframes sfCoinFlash{
+            0%{ filter: brightness(1.6) drop-shadow(0 0 6px rgba(212,184,114,.6)); }
+            100%{ filter: none; }
+        }
+        .sf-coin-price.flash{ animation: sfCoinFlash .8s ease-out; }
+
+        @media (prefers-reduced-motion: reduce){
+            .sf-coin-card, .sf-coin-card::before, .sf-coin-ic, .sf-coin-ic::after,
+            .sf-coin-spark path.line { animation: none !important; }
+            .sf-coin-card{ opacity:1; }
+            .sf-coin-spark path.line{ stroke-dashoffset: 0; }
+        }
+        /* ===== end enhanced main coins ===== */
         .sf-price-row {
             display:flex; align-items:center; justify-content:space-between;
             padding: 0.85rem 0.25rem;
@@ -2941,26 +3059,78 @@ nav a, nav button, .bottom-nav a, .bottom-nav button {
             <h3 class="text-sm font-bold text-white mb-3 px-1">العملات الرئيسية</h3>
             <div id="sf-home-main-coins" class="flex gap-3 overflow-x-auto snap-x snap-mandatory sf-hide-scroll pb-2 -mx-1 px-1" dir="ltr">
                 <!-- سيتم ملؤها ديناميكياً؛ قيم افتراضية أدناه -->
-                <div class="sf-coin-card" data-sym="BTC">
-                    <div class="flex items-center gap-2">
-                        <div class="w-9 h-9 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold">₿</div>
-                        <div class="text-white text-sm font-semibold"><span>BTC</span><span class="text-white/50">/USDT</span></div>
+                <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="sfGradUp" x1="0" x2="1" y1="0" y2="0">
+                            <stop offset="0%" stop-color="#22c55e"/><stop offset="100%" stop-color="#a7f3d0"/>
+                        </linearGradient>
+                        <linearGradient id="sfGradUpFill" x1="0" x2="0" y1="0" y2="1">
+                            <stop offset="0%" stop-color="#22c55e" stop-opacity=".55"/><stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+                        </linearGradient>
+                        <linearGradient id="sfGradDn" x1="0" x2="1" y1="0" y2="0">
+                            <stop offset="0%" stop-color="#ef4444"/><stop offset="100%" stop-color="#fda4af"/>
+                        </linearGradient>
+                        <linearGradient id="sfGradDnFill" x1="0" x2="0" y1="0" y2="1">
+                            <stop offset="0%" stop-color="#ef4444" stop-opacity=".5"/><stop offset="100%" stop-color="#ef4444" stop-opacity="0"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="sf-coin-card up" data-sym="BTC">
+                    <div class="sf-coin-head">
+                        <div class="sf-coin-id">
+                            <div class="sf-coin-ic btc"><span>₿</span></div>
+                            <div>
+                                <div class="sf-coin-name"><span>BTC</span><span class="q">/USDT</span></div>
+                                <div class="sf-coin-sub">Bitcoin</div>
+                            </div>
+                        </div>
+                        <span class="sf-coin-chg" data-change><i class="fa-solid fa-arrow-trend-up"></i>+1.24%</span>
                     </div>
-                    <div class="text-white text-lg font-bold" data-price>$ 63,272.00</div>
+                    <div class="sf-coin-body">
+                        <div class="sf-coin-price" data-price>$ 63,272.00</div>
+                        <svg class="sf-coin-spark" viewBox="0 0 84 34" preserveAspectRatio="none">
+                            <path class="area" d="M0,26 L8,22 L16,24 L24,18 L32,20 L40,12 L48,15 L56,9 L64,13 L72,6 L84,4 L84,34 L0,34 Z"/>
+                            <path class="line" d="M0,26 L8,22 L16,24 L24,18 L32,20 L40,12 L48,15 L56,9 L64,13 L72,6 L84,4"/>
+                        </svg>
+                    </div>
                 </div>
-                <div class="sf-coin-card" data-sym="ETH">
-                    <div class="flex items-center gap-2">
-                        <div class="w-9 h-9 rounded-full bg-indigo-400 flex items-center justify-center text-white font-bold">♦</div>
-                        <div class="text-white text-sm font-semibold"><span>ETH</span><span class="text-white/50">/USDT</span></div>
+                <div class="sf-coin-card dn" data-sym="ETH">
+                    <div class="sf-coin-head">
+                        <div class="sf-coin-id">
+                            <div class="sf-coin-ic eth"><span>♦</span></div>
+                            <div>
+                                <div class="sf-coin-name"><span>ETH</span><span class="q">/USDT</span></div>
+                                <div class="sf-coin-sub">Ethereum</div>
+                            </div>
+                        </div>
+                        <span class="sf-coin-chg dn" data-change><i class="fa-solid fa-arrow-trend-down"></i>-0.86%</span>
                     </div>
-                    <div class="text-white text-lg font-bold" data-price>$ 1,826.73</div>
+                    <div class="sf-coin-body">
+                        <div class="sf-coin-price" data-price>$ 1,826.73</div>
+                        <svg class="sf-coin-spark" viewBox="0 0 84 34" preserveAspectRatio="none">
+                            <path class="area" d="M0,8 L8,10 L16,7 L24,14 L32,12 L40,18 L48,16 L56,22 L64,20 L72,26 L84,24 L84,34 L0,34 Z"/>
+                            <path class="line" d="M0,8 L8,10 L16,7 L24,14 L32,12 L40,18 L48,16 L56,22 L64,20 L72,26 L84,24"/>
+                        </svg>
+                    </div>
                 </div>
-                <div class="sf-coin-card" data-sym="SOL">
-                    <div class="flex items-center gap-2">
-                        <div class="w-9 h-9 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold">◎</div>
-                        <div class="text-white text-sm font-semibold"><span>SOL</span><span class="text-white/50">/USDT</span></div>
+                <div class="sf-coin-card up" data-sym="SOL">
+                    <div class="sf-coin-head">
+                        <div class="sf-coin-id">
+                            <div class="sf-coin-ic sol"><span>◎</span></div>
+                            <div>
+                                <div class="sf-coin-name"><span>SOL</span><span class="q">/USDT</span></div>
+                                <div class="sf-coin-sub">Solana</div>
+                            </div>
+                        </div>
+                        <span class="sf-coin-chg" data-change><i class="fa-solid fa-arrow-trend-up"></i>+2.41%</span>
                     </div>
-                    <div class="text-white text-lg font-bold" data-price>$ 145.15</div>
+                    <div class="sf-coin-body">
+                        <div class="sf-coin-price" data-price>$ 145.15</div>
+                        <svg class="sf-coin-spark" viewBox="0 0 84 34" preserveAspectRatio="none">
+                            <path class="area" d="M0,24 L8,20 L16,22 L24,15 L32,17 L40,11 L48,13 L56,8 L64,10 L72,5 L84,3 L84,34 L0,34 Z"/>
+                            <path class="line" d="M0,24 L8,20 L16,22 L24,15 L32,17 L40,11 L48,13 L56,8 L64,10 L72,5 L84,3"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
