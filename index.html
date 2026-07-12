@@ -4501,40 +4501,56 @@ class="nav-btn flex flex-col items-center justify-center py-2 text-[#d4b872] hov
             </div>
         </div>
 
-        <!-- ========== محدد الشبكة ========== -->
+        <!-- ========== محدد الشبكة (تصميم البطاقات الاحترافي) ========== -->
         <div>
-            <label class="block text-xs font-medium text-[#d4b872] mb-2">اختر شبكة السحب</label>
-            <div class="grid grid-cols-3 gap-2">
-                <button type="button" onclick="switchWithdrawNetwork('trc20')" id="withdraw-network-trc20"
-                class="network-toggle-btn active flex items-center gap-1.5 p-2.5 rounded-xl bg-white/5 text-white transition">
-                <span class="network-dot trc"></span>
-                <div class="text-right">
-                    <span class="text-[11px] font-bold block">TRC20</span>
-                    <span class="text-[9px] text-[#d4b872]">Tron</span>
-                </div>
-                <i class="fa-solid fa-check-circle text-indigo-400 text-[10px] mr-auto hidden" id="check-trc20"></i>
-            </button>
-            <button type="button" onclick="switchWithdrawNetwork('bep20')" id="withdraw-network-bep20"
-            class="network-toggle-btn flex items-center gap-1.5 p-2.5 rounded-xl bg-white/5 text-white transition">
-            <span class="network-dot bnb"></span>
-            <div class="text-right">
-                <span class="text-[11px] font-bold block">BEP20</span>
-                <span class="text-[9px] text-[#d4b872]">BNB Chain</span>
+            <style>
+            /* بطاقات شبكات السحب — نمط الصورة المرجعية */
+            .wd-net-card{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+                padding:18px 6px 14px;border-radius:22px;border:2px solid rgba(96,165,250,.25);cursor:pointer;overflow:visible;
+                background:linear-gradient(160deg,rgba(96,165,250,.30) 0%,rgba(59,130,246,.14) 55%,rgba(30,64,175,.18) 100%);
+                transition:all .35s cubic-bezier(.4,0,.2,1);min-height:150px;}
+            .wd-net-card:not(.active){opacity:.85;}
+            .wd-net-card:not(.active):hover{opacity:1;border-color:rgba(96,165,250,.5);transform:translateY(-2px);}
+            .wd-net-card .wd-net-ico{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+                font-weight:800;font-size:20px;color:#fff;box-shadow:0 4px 14px rgba(0,0,0,.35);flex-shrink:0;}
+            .wd-net-card .wd-net-name{font-size:14px;font-weight:800;color:#fff;letter-spacing:.5px;}
+            .wd-net-card .wd-net-sub{font-size:9.5px;font-weight:600;color:rgba(255,255,255,.75);}
+            .wd-net-check{position:absolute;top:-9px;right:50%;transform:translateX(50%);width:26px;height:26px;border-radius:50%;
+                background:linear-gradient(135deg,#e8d5a3,#c9a94e);color:#1a1206;font-size:12px;display:flex;align-items:center;justify-content:center;
+                box-shadow:0 3px 10px rgba(0,0,0,.45);border:2px solid rgba(255,255,255,.25);z-index:2;}
+            .wd-net-check.hidden{display:none;}
+            /* ألوان التفعيل لكل شبكة */
+            #withdraw-network-trc20 .wd-net-ico{background:radial-gradient(circle at 30% 30%,#ff4d5e,#e50914);}
+            #withdraw-network-bep20 .wd-net-ico{background:radial-gradient(circle at 30% 30%,#ffd94d,#f0b90b);color:#3a2c00;}
+            #withdraw-network-erc20 .wd-net-ico{background:radial-gradient(circle at 30% 30%,#8a97f5,#627eea);}
+            #withdraw-network-trc20.active{border-color:#f87171;box-shadow:0 0 22px rgba(239,68,68,.35),inset 0 0 24px rgba(239,68,68,.08);
+                background:linear-gradient(160deg,rgba(129,140,248,.38) 0%,rgba(96,165,250,.22) 55%,rgba(139,92,246,.28) 100%);transform:scale(1.04);}
+            #withdraw-network-bep20.active{border-color:#fbbf24;box-shadow:0 0 22px rgba(251,191,36,.35),inset 0 0 24px rgba(251,191,36,.08);transform:scale(1.04);}
+            #withdraw-network-erc20.active{border-color:#818cf8;box-shadow:0 0 22px rgba(129,140,248,.4),inset 0 0 24px rgba(129,140,248,.08);transform:scale(1.04);}
+            </style>
+            <label class="block text-xs font-medium text-[#d4b872] mb-3">اختر شبكة السحب</label>
+            <div class="grid grid-cols-3 gap-2.5 pt-2">
+                <button type="button" onclick="switchWithdrawNetwork('trc20')" id="withdraw-network-trc20" class="wd-net-card active">
+                    <i class="fa-solid fa-check wd-net-check" id="check-trc20"></i>
+                    <span class="wd-net-ico">T</span>
+                    <span class="wd-net-name">TRC20</span>
+                    <span class="wd-net-sub">Tron • USDT</span>
+                </button>
+                <button type="button" onclick="switchWithdrawNetwork('bep20')" id="withdraw-network-bep20" class="wd-net-card">
+                    <i class="fa-solid fa-check wd-net-check hidden" id="check-bep20"></i>
+                    <span class="wd-net-ico">B</span>
+                    <span class="wd-net-name">BEP20</span>
+                    <span class="wd-net-sub">BNB Chain • USDT</span>
+                </button>
+                <button type="button" onclick="switchWithdrawNetwork('erc20')" id="withdraw-network-erc20" class="wd-net-card">
+                    <i class="fa-solid fa-check wd-net-check hidden" id="check-erc20"></i>
+                    <span class="wd-net-ico">Ξ</span>
+                    <span class="wd-net-name">ERC20</span>
+                    <span class="wd-net-sub">Ethereum • USDT</span>
+                </button>
             </div>
-            <i class="fa-solid fa-check-circle text-amber-400 text-[10px] mr-auto hidden" id="check-bep20"></i>
-        </button>
-        <button type="button" onclick="switchWithdrawNetwork('erc20')" id="withdraw-network-erc20"
-        class="network-toggle-btn flex items-center gap-1.5 p-2.5 rounded-xl bg-white/5 text-white transition">
-        <span class="network-dot eth"></span>
-        <div class="text-right">
-            <span class="text-[11px] font-bold block">ERC20</span>
-            <span class="text-[9px] text-[#d4b872]">Ethereum</span>
+            <input type="hidden" id="withdraw-active-network" value="trc20">
         </div>
-        <i class="fa-solid fa-check-circle text-blue-400 text-[10px] mr-auto hidden" id="check-erc20"></i>
-    </button>
-    </div>
-    <input type="hidden" id="withdraw-active-network" value="trc20">
-</div>
 
 <!-- ========== عنوان المحفظة ========== -->
 <div>
